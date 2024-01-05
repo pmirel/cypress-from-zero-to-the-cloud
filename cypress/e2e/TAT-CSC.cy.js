@@ -27,7 +27,7 @@ describe('TAT Customer Service Center', () => {
       .type('sjohn@email.com');
     cy.get('@emailInput').should('have.value', 'sjohn@email.com');
 
-    const longText = `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to`;
+    const longText = `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going`;
     cy.get('#open-text-area')
       .as('feedbackInput')
       .should('be.visible')
