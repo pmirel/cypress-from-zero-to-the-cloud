@@ -116,4 +116,33 @@ describe('TAT Customer Service Center', () => {
       .should('be.visible')
       .and('contain.text', 'Validate the required fields!');
   });
+  it('type and clear', () => {
+    cy.get('#firstName')
+      .should('be.visible')
+      .type('John')
+      .should('have.value', 'John')
+      .clear()
+      .should('have.value', '');
+
+    cy.get('#lastName')
+      .should('be.visible')
+      .type('Smith')
+      .should('have.value', 'Smith')
+      .clear()
+      .should('have.value', '');
+
+    cy.get('#email')
+      .should('be.visible')
+      .type('sjohn@email.com')
+      .should('have.value', 'sjohn@email.com')
+      .clear()
+      .should('have.value', '');
+
+    cy.get('#phone')
+      .should('be.visible')
+      .type('1234567')
+      .should('have.value', '1234567')
+      .clear()
+      .should('have.value', '');
+  });
 });
