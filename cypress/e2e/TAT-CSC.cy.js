@@ -35,7 +35,7 @@ describe('TAT Customer Service Center', () => {
       .type(longText, { delay: 0 });
     cy.get('@feedbackInput').should('have.value', longText);
 
-    cy.get('button[type="submit"]').should('be.visible').click();
+    cy.contains('button', 'Send').click();
 
     cy.get('.success')
       .should('be.visible')
@@ -70,7 +70,7 @@ describe('TAT Customer Service Center', () => {
       .type('no feedback', { delay: 0 });
     cy.get('@feedbackInput').should('have.value', 'no feedback');
 
-    cy.get('button[type="submit"]').should('be.visible').click();
+    cy.contains('button', 'Send').click();
 
     cy.get('.error')
       .should('be.visible')
@@ -110,7 +110,7 @@ describe('TAT Customer Service Center', () => {
       .type('no feedback', { delay: 0 });
     cy.get('@feedbackInput').should('have.value', 'no feedback');
 
-    cy.get('button[type="submit"]').should('be.visible').click();
+    cy.contains('button', 'Send').click();
 
     cy.get('.error')
       .should('be.visible')
@@ -146,9 +146,21 @@ describe('TAT Customer Service Center', () => {
       .should('have.value', '');
   });
   it('displays an error message when submitting the form without filling the required fields', () => {
-    cy.get('button[type="submit"]').should('be.visible').click();
+    cy.contains('button', 'Send').click();
     cy.get('.error')
       .should('be.visible')
       .and('contain.text', 'Validate the required fields!');
+  });
+  it('successfully submits the form using a custom command', () => {
+    cy.fillMandatoryFieldsAndSubmit(
+      'John',
+      'Smith',
+      'johnsmith@rmail.com',
+      'no feedback'
+    );
+
+    cy.get('.success')
+      .should('be.visible')
+      .and('contain.text', 'Message successfully sent.');
   });
 });
