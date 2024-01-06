@@ -145,4 +145,10 @@ describe('TAT Customer Service Center', () => {
       .clear()
       .should('have.value', '');
   });
+  it('displays an error message when submitting the form without filling the required fields', () => {
+    cy.get('button[type="submit"]').should('be.visible').click();
+    cy.get('.error')
+      .should('be.visible')
+      .and('contain.text', 'Validate the required fields!');
+  });
 });
