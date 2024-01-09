@@ -1,3 +1,29 @@
+# Exercices for [Cypress, from Zero to the Cloud](https://www.udemy.com/course/cypress-from-zero-to-the-cloud/)
+
+Basic exercices for Cypress automation testing framework.
+
+## Pre-requirements
+
+It is required to have Node.js, npm, git, and Visual studio code
+
+## Installation
+
+Run `npm install` (or `npm i` for the short version) to install the dev dependencies.
+
+## Tests
+
+To run the tests:
+`npm run cy:open` - for Cypress App and visual run the test
+`npm run test` - for running the tests headless
+`npm run open-mobile` - or Cypress App and visual run the test in mobile viewport
+`npm run test-mobile` - for running the tests headless in mobile viewport
+
+## Tests code files
+
+Can be found in : `cypress/e2e`
+
+## About the course:
+
 # 🌲 Cypress, from Zero to the Cloud ☁️
 
 👋 Welcome!
@@ -23,6 +49,6 @@ It's great to have you here. I'm sure you will love this course. ❤️
 
 Go to the [course structure](./lessons/_course-structure_.md) section.
 
-___
+---
 
 This is a course from [**Talking About Testing School**](https://udemy.com/user/walmyr).
