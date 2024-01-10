@@ -20,7 +20,7 @@ describe('05-TAT Customer Service Center', () => {
       .should('be.visible')
       .clear()
       .type('John');
-    cy.get('@firstNameInput').should('have.value', 'John');
+    cy.get('@firstNameInput').should('have.value', 'Johnn');
 
     cy.get('#lastName')
       .as('lastNameInput')
